@@ -13,8 +13,8 @@ class QuickSort:
         return self.__iterations
     
     @iterations.setter
-    def iterations(self, item):
-        self.__iterations = item
+    def iterations(self, value):
+        self.__iterations = value
 
     @staticmethod
     def sort_elements(arr: list) -> list:
