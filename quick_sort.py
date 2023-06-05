@@ -8,6 +8,14 @@ class QuickSort:
         self.arr = arr
         self.__iterations = 0
 
+    @property
+    def iterations(self):
+        return self.__iterations
+    
+    @iterations.setter
+    def iterations(self, item):
+        self.__iterations = item
+    
     @staticmethod
     def sort_elements(arr: list) -> list:
         """Performs sorting based on quicksort algorithm"""
@@ -24,13 +32,10 @@ class QuickSort:
 
     def call_sort(self) -> list:
         """Calls sorting method"""
-
+        self.arr = QuickSort.sort_elements(self.arr)
         self.__iterations += 1
-        return QuickSort.sort_elements(self.arr)
+        return self.arr
 
-    @property
-    def iterations(self):
-        return self.iterations
 
 
 if __name__ == "__main__":
