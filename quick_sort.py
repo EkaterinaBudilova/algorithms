@@ -30,7 +30,7 @@ class QuickSort:
 
     @property
     def iterations(self):
-        return self.iterations
+        return self.__iterations
 
 
 if __name__ == "__main__":
