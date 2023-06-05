@@ -6,7 +6,15 @@ class QuickSort:
 
     def __init__(self, arr) -> None:
         self.arr = arr
-        self.__iterations = 0
+        self.iterations = 0
+
+    @property
+    def iterations(self):
+        return self.__iterations
+    
+    @iterations.setter
+    def iterations(self, value):
+        self.__iterations = value
 
     @staticmethod
     def sort_elements(arr: list) -> list:
@@ -25,14 +33,11 @@ class QuickSort:
     def call_sort(self) -> list:
         """Calls sorting method"""
 
+        self.arr = QuickSort.sort_elements(self.arr)
         self.__iterations += 1
-        return QuickSort.sort_elements(self.arr)
-
-    @property
-    def iterations(self):
-        return self.iterations
+        return self.arr
 
 
 if __name__ == "__main__":
-    s = QuickSort(np.random.rand(10000))
+    s = QuickSort(np.random.rand(100))
     print(timeit.timeit("s.call_sort()", setup="from __main__ import s", number=100))
